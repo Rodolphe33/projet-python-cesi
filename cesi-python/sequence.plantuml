@@ -1,0 +1,7 @@
+@@startuml Digramme de séquence
+    skinparam Style strictuml
+    SequenceMessageAlignment center
+    Front -> Back : requete
+    Back -> Database : appel
+
+@@enduml

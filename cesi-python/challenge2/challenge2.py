@@ -1,7 +1,10 @@
+# Augmenter ce script d'un formatage JSON. (parser chaque groupe de
+# données).
+
 import requests
 import json
 
-response = requests.get("http://app.objco.com:8099/?account=16L1SPQZS3&limit=10")
+response = requests.get("http://app.objco.com:8099/?account=16L1SPQZS3&limit=5")
 print(response.status_code)
 print(response.json)
 dico = response.json()
