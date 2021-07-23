@@ -5,8 +5,8 @@ import requests
 import json
 
 response = requests.get("http://app.objco.com:8099/?account=16L1SPQZS3&limit=5")
-print(response.status_code)
-print(response.json)
+# print(response.status_code)
+# print(response.json())
 dico = response.json()
 #print(dico)
 for i in range(0, len(dico)):

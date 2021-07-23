@@ -1,7 +1,17 @@
 @startuml
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
+    skinparam Style strictuml
 
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: Another authentication Response
+    title Diagramme de séquence
+
+    == Récupération du WS et envoi en base ==
+        API_Back -> Web_Service : Requete
+        Web_Service -> API_Back : Reponse JSON
+        API_Back -> BDD : envoi
+
+    == Affichage de la requete ==
+        Client -> API_Back : Requete
+        API_Back -> BDD : Requete SQL
+        BDD -> API_Back : Réponse
+        API_Back -> Client : Affichage
+
 @enduml
