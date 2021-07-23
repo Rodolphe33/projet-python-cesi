@@ -7,3 +7,5 @@ dico = response.json()
 for i in range(0, len(dico)):
     json_string = json.dumps(dico[i][0], indent=1)
     print("2=> ", json_string)
+    sql.connection(json_string)
+    

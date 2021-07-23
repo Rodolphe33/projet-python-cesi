@@ -19,7 +19,7 @@ with connection:
 
     with connection.cursor() as cursor:
         # Read a single record
-        sql = "SELECT `id`, `password` FROM `users` WHERE `email`=%s"
+        sql = "SELECT `id`, `value` FROM `meteo`"
         cursor.execute(sql, ('webmaster@python.org',))
         result = cursor.fetchone()
         print(result)
