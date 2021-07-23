@@ -9,6 +9,6 @@ print(response.status_code)
 print(response.json)
 dico = response.json()
 #print(dico)
-for i in range(0, 5):
+for i in range(0, len(dico)):
     json_string = json.dumps(dico[i], indent=1)
     print(json_string)
