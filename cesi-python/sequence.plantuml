@@ -2,16 +2,20 @@
     skinparam Style strictuml
 
     title Diagramme de séquence
+    actor       Client      as Foo1
+    control     API_Back    as Foo2
+    database    BDD         as Foo4
+    queue      Web_Service  as Foo3
 
     == Récupération du WS et envoi en base ==
-        API_Back -> Web_Service : Requete
-        Web_Service --> API_Back : Reponse JSON
-        API_Back -> BDD : envoi
+        Foo2 -> Foo3 : Requete
+        Foo3 --> Foo2 : Reponse JSON
+        Foo2 -> Foo4 : envoi
 
     == Affichage de la requete ==
-        Client -> API_Back : Requete
-        API_Back -> BDD : Requete SQL
-        BDD --> API_Back : Réponse
-        API_Back -> Client : Affichage
+        Foo1 -> Foo2 : Requete
+        Foo2 -> Foo4 : Requete SQL
+        Foo4 --> Foo2 : Réponse
+        Foo2 -> Foo1 : Affichage
 
 @enduml
